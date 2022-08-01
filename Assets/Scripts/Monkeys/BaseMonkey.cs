@@ -4,5 +4,7 @@ using UnityEngine;
 
 public abstract class BaseMonkey : MonoBehaviour
 {
+    
+
     public abstract void Interact();
 }
