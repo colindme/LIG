@@ -18,6 +18,10 @@ public class InputManager : MonoBehaviour
                 BaseMonkey tappedMonkey = hitInfo.collider.GetComponent<BaseMonkey>();
                 if (tappedMonkey != null) tappedMonkey.Interact();
             }
+            if(typeof(I_Tappable).IsAssignableFrom(hitInfo.collider.gameObject.GetType()))
+            {
+                hitInfo.collider.gameObject.GetComponent<I_Tappable>().OnTap();
+            }
         }
         // Camera controls
         if(Input.touchCount == 1 && Input.touches[0].phase == TouchPhase.Moved)
